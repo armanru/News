@@ -1,0 +1,16 @@
+﻿@model Reporter
+<div class="border-3" style="text-align:left" >
+       <div>
+           <label class="form-label" asp-for="Id"></label>
+           <input class="form-control" asp-for="Id" />
+       </div>
+    <div>
+        <label class="form-label" asp-for="UserName"></label>
+        <input class="form-control" asp-for="UserName" />
+    </div>
+    <div>
+        <label class="form-label" asp-for="Age"></label>
+        <input class="form-control" asp-for="Age" />
+    </div>
+    <a class="btn-success btn btn" asp-controller="Home" asp-action="Index">Back</a>
+</div>

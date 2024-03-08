@@ -1,0 +1,31 @@
+﻿@using News
+@model List<Newses>
+<h1>News
+</h1><a class="btn-sm btn-dark" asp-controller="News" asp-action="Creat">New Event</a>
+<table class="table table-striped table-hover table-dark  table-bordere w-100">
+    <tr>
+        <td>Id</td>
+        <td>Tittle</td>
+        <td>text</td>
+        <td>Option</td>
+
+    </tr>
+    @foreach (var News in Model)
+    {
+        <tr>
+            <td>@News.Id</td>
+            <td>@News.Title.</td>
+            <td>@News.Text</td>        
+           <td> <form asp-controller="News" asp-action="Delete" asp-route-Id="@News.Id" method="post">
+                <input type="submit" value="Delete" class="btn btn-danger"/>
+            </form>            
+            <form asp-controller="News" asp-action="Detail" asp-route-Id="@News.Id">
+                <input type="submit" value="Detail" class="btn btn-success" />
+                </form>          
+            </td>
+           </tr>
+    }
+
+
+
+</table>

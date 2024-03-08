@@ -1,0 +1,78 @@
+﻿@model Newses
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<html>
+<head>
+<title>New Event</title>
+<link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+<h2>New Text</h2>
+<form method="post" style="border:3px solid #ccc" asp-controller="News" asp-action="Creat">
+           <div class="container">
+           <label asp-for="Id">Id</label>
+                <input type="text" asp-for="Id">
+
+           <label asp-for="Title">Tittle</label>
+                <input type="text" asp-for="Title">
+
+           <label asp-for="Text">Text</label>
+                <input type="text" asp-for="Text">
+
+                <input type="checkbox" checked="checked">Remember
+           </div>
+      <div class="clearfix">
+<button type="cancel" class="btncan" asp-action="Index" asp-controller="Home">Cancel</button>
+<button type="submit"class="btnsign">Send</button>
+
+       </div>
+</form>
+
+</body>
+<style>
+    .container{
+	padding:16px;
+}
+input[type=text],input[type=password]{
+	width:100%;
+	padding:12px 20px;
+	margin:8px 0;
+	display:inline-block;
+	box-sizing:border-box;
+	
+}
+button{
+	background-color:#4caF50;
+	color:white;
+	padding:14px 20px;
+	margin:8px 0;
+	border:none;
+	cursor:pointer;
+	width:100%;
+	
+	
+}
+.btncan{
+	padding:14px 20px;
+	background-color:red;
+}
+.btncan,.btnsign{
+	float:left;
+	width:50%;
+}
+.clearfix::after{
+	content:"";
+	clear:both;
+	display:table;
+}
+@Model screen and (max-width:300px){
+	.btncan,.btnsign{
+		width:100%;
+	}
+}
+</style>
+</html>
